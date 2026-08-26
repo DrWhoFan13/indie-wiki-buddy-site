@@ -492,9 +492,10 @@
                 <br />
                 <br />
                 When you visit a wiki on Fandom, Fextralife, or Neoseeker, this extension will notify or automatically
-                redirect you to quality independent wikis when they're available. Search results in Google, Bing,
-                DuckDuckGo, Yahoo, Brave, Ecosia, Startpage, Qwant, Kagi, and Yandex can also be filtered, guiding you
-                to visit an independent counterpart instead.
+                redirect you to quality independent wikis when they're available. Search engine results can also be
+                filtered, guiding you to visit an independent counterpart instead. We support filtering on Google, Bing,
+                DuckDuckGo, Yahoo, Brave, Ecosia, Startpage, Qwant, Kagi, Yandex, and custom search engines (SearXNG and
+                Whoogle).
                 <br />
                 <br />
                 Indie Wiki Buddy supports <a href="listings">over 800 quality, independent wikis</a> across 22
@@ -557,6 +558,10 @@
         <div class="container content">
             <h2 class="subtitle"><a id="guide">Guide</a></h2>
             <div class="content">
+                When you first install Indie Wiki Buddy, a welcome page walks you through the settings most people want
+                to set up, including which search engines to turn on. You can change any of these later.
+                <br />
+                <br />
                 Once installed, you can access the extension's settings popup via the
                 <img src="./img/logo.png" width="20" alt="icon of an arrow pointing to the right" />
                 in the top bar, at the top right.
@@ -578,7 +583,8 @@
                 <br />
                 <br />
                 The first set of options let you quickly set the default behavior for all wikis. First, you can select
-                happens when you visit Fandom and Fextralife wikis in which an independent wiki is available.
+                what happens when you visit Fandom, Fextralife, and Neoseeker wikis in which an independent wiki is
+                available.
                 <ul class="no-markers padded">
                     <li>
                         <img class="dark-invert" src="./img/toggle-disabled.png" alt="" width="15" />
@@ -595,8 +601,8 @@
                         <b>Redirect</b>: Be automatically redirected to the independent counterpart.
                     </li>
                 </ul>
-                The second option is for what happens in search engines when you get results for Fandom and Fextralife
-                wikis that have independent counterparts.
+                The second option is for what happens in search engines when you get results for Fandom, Fextralife, and
+                Neoseeker wikis that have independent counterparts.
                 <ul class="no-markers padded">
                     <li>
                         <img class="dark-invert" src="./img/toggle-disabled.png" alt="" width="15" />
@@ -605,7 +611,7 @@
                     <li>
                         <img class="dark-invert" src="./img/toggle-replace.png" alt="" width="15" />
                         <b>Replace</b> (default): The original non-indie result is disabled, and a button is injected
-                        above to take you to the indepedent wiki.
+                        above to take you to the independent wiki.
                     </li>
                     <li>
                         <img class="dark-invert" src="./img/toggle-hide.png" alt="" width="15" />
@@ -613,6 +619,10 @@
                         page to inform you, and allow you to re-reveal the hidden results.
                     </li>
                 </ul>
+                Only google.com is on by default. To filter results on other search engines, you will need to turn them
+                on. Your browser will ask you to grant access to each one. These choices are saved per device.
+                <br />
+                <br />
                 Below that are several global options:
                 <ul class="no-markers padded">
                     <li>
@@ -649,7 +659,8 @@
                         This option will render Fandom wikis through <a href="https://breezewiki.com/">BreezeWiki</a>,
                         an external service that removes clutter, simplifies the page, and removes ads. Occasionally,
                         BreezeWiki or one of its mirrors may go down; when this happens, you can simply switch to
-                        another working instance. This is off by default.
+                        another working instance. The list of available mirrors updates on its own, and your browser
+                        will ask you to grant access when you pick a mirror other than breezewiki.com.
                     </li>
                 </ul>
             </div>
@@ -738,37 +749,39 @@
                 and user quality, independent wikis.
             </div>
             <br />
-            <span class="question">Why does this extension need access to so many sites?</span>
+            <span class="question">Which sites does this extension need access to?</span>
             <div class="content">
                 Indie Wiki Buddy requests access to fandom.com, fextralife.com, and neoseeker.com. These are the wiki
-                platforms that Indie Wiki Buddy will redirect from.
+                platforms that Indie Wiki Buddy will redirect from. It also requests access to breezewiki.com, in order
+                to perform redirects and display redirect banners there.
                 <br /><br />
-                Indie Wiki Buddy also requests access to BreezeWiki and its mirrors, in order to perform redirects and
-                display redirect banners.
+                Indie Wiki Buddy also requests access to google.com by default to filter search results. You can also
+                turn on filtering in other search engines: Bing, DuckDuckGo, Yahoo, Brave, Startpage, Ecosia, Kagi,
+                Qwant, Yandex, international Google sites, and custom search engines like SearXNG and Whoogle. You can
+                also turn on BreezeWiki mirrors other than breezewiki.com, which will require granting access to those
+                sites. If you enable another search engine or a BreezeWiki mirror, your browser will ask you to grant
+                access to that site.
                 <br /><br />
-                Indie Wiki Buddy also requests access to ten search engines: Google (across all its country domains),
-                Bing, DuckDuckGo, Yahoo, Brave, Startpage, Ecosia, Kagi, Qwant, and Yandex in order to filter search
-                results on those sites. There are almost 200 different domains for Google Search by country (e.g.
-                google.co.uk, google.ca, google.es, etc.), which take up most of the site accesses you see.
-                <br /><br />
-                The full list of sites Indie Wiki Buddy requests access to is available
-                <a href="https://github.com/KevinPayravi/indie-wiki-buddy/blob/main/manifest-chromium.json#L61">here</a
+                The full list of sites Indie Wiki Buddy requests access to by default is in the
+                <a href="https://github.com/IndieWikiBuddy/indie-wiki-buddy/blob/main/manifest-chromium.json"
+                    >extension manifest</a
                 >. <br /><br />
                 Indie Wiki Buddy never transmits or stores data from these sites. Access is only used in order to
                 perform redirects, display alert banners, and filter search results.
             </div>
             <br />
-            <span class="question">Why does the latest update require more permissions?</span>
-            <div class="content">
-                If an Indie Wiki Buddy update is requesting more permissions, it's usually to add access to a search
-                engine or BreezeWiki mirror that we are now supporting.
-                <br /><br />
-                You can check the <a href="/changelog">changelog</a> for what has changed with each update, and if you
-                have any questions, don't hesitate to contact us (contact info at bottom of page).
-            </div>
-            <br />
             <span class="question"> Where can I find a list of supported wikis? </span>
             <div class="content">Check out the <a href="listings">list of wikis</a>!</div>
+            <br />
+            <span class="question">When are new wiki redirects added?</span>
+            <div class="content">
+                Wiki redirect data lives in its own
+                <a href="https://github.com/IndieWikiBuddy/indie-wiki-buddy-data">data repository on GitHub</a> and is
+                served from <a href="https://api.getindie.wiki/v1/all-data.json">an API</a>. The extension fetches the
+                latest data every three hours, so new wikis work soon after they're added. You can turn this off in
+                settings, in which case the extension only uses the wikis bundled with your installed version. New
+                versions of the extension are periodically released with updated wikis.
+            </div>
             <br />
             <span class="question">
                 For independent wikis to be added to the extension, why do they need to be of equal quality and coverage
@@ -787,8 +800,9 @@
             <br />
             <span class="question">Can I see or contribute to the code?</span>
             <div class="content">
-                Yes! Indie Wiki Buddy is open source and available
-                <a href="https://github.com/KevinPayravi/indie-wiki-buddy">on GitHub</a>.
+                Yes! Indie Wiki Buddy is open source. The
+                <a href="https://github.com/IndieWikiBuddy/indie-wiki-buddy">extension code</a> and the
+                <a href="https://github.com/IndieWikiBuddy/indie-wiki-buddy-data">wiki data</a> are both on GitHub.
             </div>
             <br />
             <hr />
