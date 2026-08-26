@@ -21,7 +21,7 @@
         <div class="container content align-center">
             <h1 class="subtitle">Indie Wiki Buddy Privacy Policy</h1>
             <p><a href="..">⇦ Back to home</a></p>
-            <p>Privacy policy last updated August 21, 2024</p>
+            <p>Privacy policy last updated August 26, 2026</p>
             <br />
             <p>
                 This website is hosted on Cloudflare Pages. Cloudflare's privacy policy is available
@@ -34,21 +34,31 @@
                 <a href="https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync">
                     sync storage</a
                 >
-                (if supported). <br /><br />
+                (if supported).
+                <br /><br />
                 Indie Wiki Buddy can see which Fandom, Fextralife, and Neoseeker wikis you visit for the purpose of
                 redirecting you to alternative wikis and the BreezeWiki alternative frontend, if enabled. Your browsing
                 history on these websites is not stored or transmitted anywhere by Indie Wiki Buddy.
                 <br /><br />
-                Indie Wiki Buddy can also see your activity on search engines (as of version 3.6.0, this includes
-                Google, Bing, DuckDuckGo, Yahoo, Brave, Ecosia, Startpage, Qwant, Kagi, and Yandex). This allows Indie
-                Wiki Buddy to filter search engine results for Fandom and Fextralife wikis. Your activity on search
-                engines is not stored or transmitted anywhere by Indie Wiki Buddy.
+                Indie Wiki Buddy can also see your activity on the search engines you have turned on filtering for. As
+                of version 4.0.0, only google.com is on by default. Bing, DuckDuckGo, Yahoo, Brave, Ecosia, Startpage,
+                Qwant, Kagi, Yandex, other Google country domains, and any custom SearXNG or Whoogle instance you add
+                are off until you turn them on in settings, at which point your browser asks you to grant access to that
+                site. This allows Indie Wiki Buddy to filter search engine results for Fandom, Fextralife, and Neoseeker
+                wikis. Your activity on search engines is not stored or transmitted anywhere by Indie Wiki Buddy.
+                <br /><br />
+                Indie Wiki Buddy fetches its list of wiki redirects from
+                <a href="https://api.getindie.wiki/v1/all-data.json">https://api.getindie.wiki/v1/all-data.json</a>
+                every three hours. This endpoint is managed by the Indie Wiki Buddy developer and delivered via
+                Cloudflare. You can turn this feature off in settings, in which case the extension only uses the wikis bundled
+                with your installed version.
                 <br /><br />
                 If the BreezeWiki redirect functionality has been enabled, the extension will pull a list of working
                 BreezeWiki instances from
                 <a href="https://bw.getindie.wiki/instances.json">https://bw.getindie.wiki/instances.json</a>, which is
-                managed by the Indie Wiki Buddy developer and delivered via Cloudlfare Pages. This is done in order to
-                provide the extension with an up-to-date list of working BreezeWiki mirrors. <br /><br />
+                managed by the Indie Wiki Buddy developer and delivered via Cloudflare Pages. This is done in order to
+                provide the extension with an up-to-date list of working BreezeWiki mirrors. When you pick a mirror
+                other than breezewiki.com, your browser asks you to grant access to that site. <br /><br />
                 Your browser and the online store you acquire the extension through (e.g.
                 <a href="https://chrome.google.com/webstore/category/extensions">Chrome Web Store</a> or
                 <a href="https://addons.mozilla.org/firefox/extensions/">Firefox Add-ons</a>) may perform its own data
