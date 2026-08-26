@@ -64,14 +64,17 @@
             </li>
             <li>
                 <b>Search engines are now opt-in!</b>
-                In an effort to be more privacy-friendly, Indie Wiki Buddy no longer asks for access to all its supported search engines upon install. google.com still works out of the box, as it is the most popular search engine that most users will want and expect to be enabled. Every other search engine (Bing, DuckDuckGo, Brave, Ecosia, Kagi, Qwant, Startpage, Yahoo, Yandex, and international Google domains) is off until the user turns it on via settings.
+                In an effort to be more privacy-friendly, Indie Wiki Buddy no longer asks for access to all its supported search engines upon install. google.com still works out of the box, as it is the most popular search engine that most users will want and expect to be enabled. Every other search engine (Bing, DuckDuckGo, Brave, Ecosia, Kagi, Qwant, Startpage, Yahoo, Yandex, and international Google domains) is off until you turn it on in settings.
                 <ul>
                     <li>
                         This keeps the extension's access to the minimum you actually use, and lets us add new search
                         engines later without an update that everyone has to approve
                     </li>
                     <li>
-                        For existing users who update to 4.0.0, they will see a one-time page explaining the change. Prior permissions may have carried over so users may or may not see all search engines toggled on, depending on browser and configuration.
+                        Existing users who update to 4.0.0 will see a one-time page explaining the change and toggles for all search engines.
+                    </li>
+                    <li>
+                        Search engine toggles are now saved per device rather than synced, since browser permissions are granted per device
                     </li>
                 </ul>
                 <div class="align-center">
@@ -81,7 +84,10 @@
             </li>
             <li>
                 <b>Custom search engines are back!</b>
-                You can now point Indie Wiki Buddy at your own search engines running SearXNG or Whoogle.
+                You can now point Indie Wiki Buddy at your own search engines running SearXNG or Whoogle, including ones hosted on localhost or over plain http.
+                <ul>
+                    <li>Like search engine toggles, these are saved per device</li>
+                </ul>
                 <div class="align-center">
                     <img src="../img/custom-search-engines.png" width="500"
                         alt="Indie Wiki Buddy's custom search engine settings." />
@@ -102,7 +108,7 @@
                         Similar to our search engines update, BreezeWiki mirrors are now opt-in on selection
                     </li>
                     <li>
-                        Available BreezeWiki mirrors are now pulled from our <a href="https://bw.getindie.wiki/instances.json">endpoint</a>
+                        Available BreezeWiki mirrors are now pulled from our <a href="https://bw.getindie.wiki/instances.json">endpoint</a>, so new mirrors work without an extension update
                     </li>
                     <li>Everyone's host is reset to breezewiki.com with this update</li>
                 </ul>
@@ -115,18 +121,25 @@
                 </ul>
             </li>
             <li>
+                The settings popup now warns you if Indie Wiki Buddy has lost browser access to Fandom, Fextralife, or Neoseeker, with a button to grant it back
+            </li>
+            <li>
+                Accessibility improvements on redirect banners, links, and search result controls
+            </li>
+            <li>
                 Under the hood:
                 <ul>
                     <li>
                         Minimum browser versions are now Chrome 131 (was 88) and Firefox 128 (was 113), which is required to support optional permissions
                     </li>
                     <li>
-                        Firefox now runs on Manifest V3, the same platform as Chrome
+                        Firefox now runs on Manifest V3, the same platform as Chrome. One visible effect for Firefox users is that you can now manage Indie Wiki Buddy's per-site permissions from Firefox's add-on settings page.
                     </li>
                     <li>
                         Per-wiki settings are now split across 32 storage keys, to avoid hitting the browser storage limit for synced storage data. The extension will automatically migrate your settings to the new format.
                     </li>
-                    <li>The codebase has been updated to use ES modules to enable better sharing of code between files</li>
+                    <li>Banners on wiki pages now appear sooner in the page load</li>
+                    <li>Updated the codebase to use ES modules, so files can share code</li>
                     <li>Dark mode fixes, keyboard focus fixes, missing localization, and other small improvements</li>
                 </ul>
             </li>
