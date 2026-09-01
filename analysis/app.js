@@ -424,12 +424,8 @@ function crossWarnings(origin, destination) {
 }
 
 // Notes for a new entry
-function newEntryNotes(destination, entry, language) {
+function newEntryNotes(destination) {
     const notes = [];
-    const icon = cleanText(destination.iconUrl, 300);
-    let note = `Add the favicon as \`favicons/${language}/${entry.destination_icon}\` (16px PNG).`;
-    if (icon) note += ` Source: ${codeSpan(icon)}`;
-    notes.push(note);
     if (destination.official) {
         notes.push(
             'The destination calls itself "official", so the draft has the ' +
@@ -449,7 +445,7 @@ function buildView(origin, destination, entry, dataResult, language) {
     if (draft && hasNull(draft)) {
         notes.push("The tool could not determine the fields shown as `null`; fill them in by hand.");
     }
-    if (entry && !existing) notes.push(...newEntryNotes(destination, entry, language));
+    if (entry && !existing) notes.push(...newEntryNotes(destination));
 
     return {
         sites: [
