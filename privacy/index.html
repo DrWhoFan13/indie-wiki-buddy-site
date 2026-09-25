@@ -21,44 +21,72 @@
         <div class="container content align-center">
             <h1 class="subtitle">Indie Wiki Buddy Privacy Policy</h1>
             <p><a href="..">⇦ Back to home</a></p>
-            <p>Privacy policy last updated August 26, 2026</p>
-            <br />
+            <p>Privacy policy last updated September 15, 2026</p>
+
+            <h2>This website</h2>
             <p>
                 This website is hosted on Cloudflare Pages. Cloudflare's privacy policy is available
-                <a href="https://www.cloudflare.com/privacypolicy/">here</a>. <br /><br />
+                <a href="https://www.cloudflare.com/privacypolicy/">here</a>.
+            </p>
+            <p>
+                This website's <a href="../analysis/">wiki analysis tool</a> runs in your browser. When you check a
+                wiki, your browser will query that wiki's API, as well as Indie Wiki Buddy's own redirect list from
+                api.getindie.wiki to check against. Wiki favicons are fetched through
+                <a href="https://images.weserv.nl/">images.weserv.nl</a>, an image proxy.
+            </p>
+            <p>
+                The wiki analysis tool lets you sign in via GitHub to automatically open pull requests. If you do sign
+                in, GitHub will ask you to grant the <code>public_repo</code> permission, which gives the analysis tool
+                write-access to your public repositories. This is only used to fork the Indie Wiki Buddy data
+                repository, create a new branch, and open a pull request from your account. The sign-in is done via a
+                Cloudflare Worker (<a href="https://github.com/IndieWikiBuddy/iwb-github-oauth-worker">source</a>),
+                which provides an access token. The token stays in your browser's memory and is discarded when you close
+                the tab or sign out. You can revoke the app at any time in your GitHub settings. Indie Wiki Buddy does
+                not store your token or any data from your checks.
+            </p>
+
+            <h2>The browser extension</h2>
+            <p>
                 The Indie Wiki Buddy browser extension links to and redirects users to external, third-party websites
                 not controlled by the extension. These websites have their own privacy policies and practices. Users
                 should visit these websites at their own risk.
-                <br /><br />
+            </p>
+            <p>
                 Indie Wiki Buddy's settings and stats are stored in your browser's storage, both locally and in
                 <a href="https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync">
                     sync storage</a
                 >
                 (if supported).
-                <br /><br />
+            </p>
+            <p>
                 Indie Wiki Buddy can see which Fandom, Fextralife, and Neoseeker wikis you visit for the purpose of
                 redirecting you to alternative wikis and the BreezeWiki alternative frontend, if enabled. Your browsing
                 history on these websites is not stored or transmitted anywhere by Indie Wiki Buddy.
-                <br /><br />
+            </p>
+            <p>
                 Indie Wiki Buddy can also see your activity on the search engines you have turned on filtering for. As
                 of version 4.0.0, only google.com is on by default. Bing, DuckDuckGo, Yahoo, Brave, Ecosia, Startpage,
                 Qwant, Kagi, Yandex, other Google country domains, and any custom SearXNG or Whoogle instance you add
                 are off until you turn them on in settings, at which point your browser asks you to grant access to that
                 site. This allows Indie Wiki Buddy to filter search engine results for Fandom, Fextralife, and Neoseeker
                 wikis. Your activity on search engines is not stored or transmitted anywhere by Indie Wiki Buddy.
-                <br /><br />
+            </p>
+            <p>
                 Indie Wiki Buddy fetches its list of wiki redirects from
                 <a href="https://api.getindie.wiki/v1/all-data.json">https://api.getindie.wiki/v1/all-data.json</a>
                 every three hours. This endpoint is managed by the Indie Wiki Buddy developer and delivered via
-                Cloudflare. You can turn this feature off in settings, in which case the extension only uses the wikis bundled
-                with your installed version.
-                <br /><br />
+                Cloudflare. You can turn this feature off in settings, in which case the extension only uses the wikis
+                bundled with your installed version.
+            </p>
+            <p>
                 If the BreezeWiki redirect functionality has been enabled, the extension will pull a list of working
                 BreezeWiki instances from
                 <a href="https://bw.getindie.wiki/instances.json">https://bw.getindie.wiki/instances.json</a>, which is
                 managed by the Indie Wiki Buddy developer and delivered via Cloudflare Pages. This is done in order to
                 provide the extension with an up-to-date list of working BreezeWiki mirrors. When you pick a mirror
-                other than breezewiki.com, your browser asks you to grant access to that site. <br /><br />
+                other than breezewiki.com, your browser asks you to grant access to that site.
+            </p>
+            <p>
                 Your browser and the online store you acquire the extension through (e.g.
                 <a href="https://chrome.google.com/webstore/category/extensions">Chrome Web Store</a> or
                 <a href="https://addons.mozilla.org/firefox/extensions/">Firefox Add-ons</a>) may perform its own data
