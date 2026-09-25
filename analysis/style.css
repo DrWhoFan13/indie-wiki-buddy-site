@@ -14,9 +14,47 @@
     max-width: 46em;
 }
 
+.analysis a.button {
+    color: var(--button-text);
+}
+
+.analysis .panel {
+    border: 1px solid var(--base-variant);
+    border-radius: 6px;
+    padding: 0.25em 1em 1em;
+    margin: 1em 0;
+}
+
+.analysis .panel > h2:first-child {
+    margin-top: 0.75em;
+}
+
+.analysis .button.secondary,
+.analysis a.button.secondary {
+    background: var(--base-variant);
+    color: var(--text-color-primary);
+}
+
+.analysis .button.secondary:hover {
+    background: var(--button-secondary-hover);
+}
+
 .analysis h2 {
     font-size: 1.1em;
     margin: 1.5em 0 0.5em;
+}
+
+#account {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 0.75em;
+    margin: 1em 0;
+}
+
+#account .button {
+    padding: 6px 16px;
+    font-size: 0.9em;
 }
 
 .analysis form {
@@ -67,8 +105,16 @@
     opacity: 0.75;
 }
 
+/* Empty status boxes take no space */
+#status:empty,
+#draft-error:empty,
+#pr-status:empty {
+    margin: 0;
+}
+
 #overview p {
     margin: 0.25em 0;
+    overflow-wrap: anywhere;
 }
 
 .analysis table {
@@ -112,19 +158,15 @@
     overflow-wrap: anywhere;
 }
 
-.analysis pre {
-    background: var(--base-variant);
-    border: 1px solid var(--button-disabled-color);
-    border-radius: 6px;
-    padding: 0.75em;
-    overflow-x: auto;
-    font-size: 0.85em;
-}
-
+#draft-hint,
 #draft-notes {
     opacity: 0.75;
     font-size: 0.9em;
     overflow-wrap: anywhere;
+}
+
+#draft-hint {
+    margin-top: 0;
 }
 
 #favicon {
@@ -151,10 +193,32 @@
     resize: vertical;
 }
 
-.analysis .checkbox {
-    display: block;
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75em;
+    margin-top: 0.5em;
+}
+
+#issue-note {
+    opacity: 0.75;
+    font-size: 0.9em;
+}
+
+#draft-error {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+#pr-status {
+    opacity: 0.75;
+    font-size: 0.9em;
+    overflow-wrap: anywhere;
+}
+
+#pr-link {
+    display: inline-block;
     margin-bottom: 0.5em;
-    font-weight: 400;
 }
 
 .footnote {

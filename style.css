@@ -11,6 +11,7 @@
   --button-hover: #00467a;
   --button-disabled-color: #CCCCCC;
   --button-disabled-text: #888888;
+  --button-secondary-hover: #ddd;
 
   --img-border-color: #005699;
   --changelog-img-border: #d8d8d8;
@@ -32,6 +33,7 @@
     --button-hover: #00467a;
     --button-disabled-color: #8f8f8f;
     --button-disabled-text: #ffffff;
+    --button-secondary-hover: #3a3d3e;
   
     --img-border-color: #005699;
     --changelog-img-border: #222222;
@@ -51,6 +53,11 @@
 }
 
 /* Element styling */
+
+[hidden] {
+  display: none !important;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text-color-primary);

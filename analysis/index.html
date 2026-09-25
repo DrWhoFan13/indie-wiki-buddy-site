@@ -11,7 +11,10 @@
         <link rel="icon" href="../img/favicon-128.png" sizes="128x128" />
         <link rel="stylesheet" href="../style.css" />
         <link rel="stylesheet" href="style.css" />
-        <meta name="description" content="Tool to help review new redirect candidates for Indie Wiki Buddy." />
+        <meta
+            name="description"
+            content="Tool to review new redirect candidates for Indie Wiki Buddy and open a pull request to add them."
+        />
         <meta property="og:image" content="https://getindie.wiki/img/indie-wiki-buddy-banner.png" />
     </head>
 
@@ -20,11 +23,15 @@
             <h1 class="subtitle">Wiki Analysis</h1>
             <p class="align-center"><a href="..">⇦ Back to home</a></p>
             <p>
-                This tool helps review new redirect candidates for Indie Wiki Buddy: it compares an origin wiki with its
-                independent destination, checks it against the
-                <a href="https://github.com/IndieWikiBuddy/indie-wiki-buddy-data">Indie Wiki Buddy data</a>, and builds
-                a markdown comment for GitHub. Primarily works with just MediaWiki wikis.
+                This tool helps review new redirect candidates for Indie Wiki Buddy. You can compare an origin wiki with
+                its independent destination and build a markdown report for GitHub. Primarily works with MediaWiki
+                wikis.
             </p>
+
+            <div id="account">
+                <span id="account-text"></span>
+                <button id="account-button" class="button secondary" type="button"></button>
+            </div>
 
             <form id="form" autocomplete="off">
                 <div class="field">
@@ -38,42 +45,67 @@
                 <button id="submit" class="button" type="submit">Check</button>
             </form>
 
-            <p id="status" role="status" hidden></p>
+            <p id="status" role="status"></p>
 
             <section id="results" hidden>
-                <div id="overview"></div>
-                <table id="stats" hidden>
-                    <thead>
-                        <tr>
-                            <th>Statistic</th>
-                            <th>Origin</th>
-                            <th>Destination</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <div id="comparison" class="panel">
+                    <h2>Comparison</h2>
+                    <div id="overview"></div>
+                    <table id="stats" hidden>
+                        <thead>
+                            <tr>
+                                <th>Statistic</th>
+                                <th>Origin</th>
+                                <th>Destination</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
                 <div id="warnings" hidden>
                     <h2>⚠ Notes</h2>
                     <ul></ul>
                 </div>
-                <div id="draft" hidden>
+                <div id="draft" class="panel" hidden>
                     <h2 id="draft-title"></h2>
-                    <pre><code id="draft-json"></code></pre>
+                    <p id="draft-hint">You can edit the JSON data below if anything is off.</p>
+                    <textarea
+                        id="draft-json"
+                        aria-label="Draft entry JSON"
+                        spellcheck="false"
+                        autocomplete="off"
+                    ></textarea>
+                    <p id="draft-error" role="status"></p>
                     <p id="draft-notes"></p>
                     <div id="favicon" hidden>
                         <img id="favicon-actual" width="16" height="16" alt="Destination favicon" />
-                        <a id="favicon-download" class="button" download></a>
+                        <a id="favicon-download" class="button secondary" download></a>
                     </div>
                 </div>
-                <div id="markdown-wrap">
-                    <h2>Markdown for GitHub</h2>
-                    <label id="include-json-label" class="checkbox">
-                        <input id="include-json" type="checkbox" checked />
-                        Include the draft JSON
-                    </label>
-                    <textarea id="markdown" readonly rows="16" spellcheck="false"></textarea>
-                    <br />
-                    <button id="copy" class="button" type="button">Copy markdown</button>
+                <div id="submit-box" class="panel">
+                    <h2>Send to GitHub</h2>
+                    <p id="pr-intro"></p>
+                    <div class="button-row">
+                        <button id="pr-button" class="button" type="button" hidden>Sign in with GitHub</button>
+                        <a id="issue-link" class="button secondary" target="_blank" rel="noopener"
+                            >Open a GitHub issue</a
+                        >
+                        <button id="copy" class="button secondary" type="button">Copy markdown</button>
+                    </div>
+                    <p id="pr-status" role="status"></p>
+                    <a id="pr-link" class="button" target="_blank" rel="noopener" hidden></a>
+                    <p id="issue-note" hidden>
+                        The report is too long to prefill on GitHub, so the issue opens without it. You can paste it
+                        into the "Analysis results" field via the <strong>Copy markdown</strong> button.
+                    </p>
+                    <textarea
+                        id="markdown-fallback"
+                        aria-label="Markdown for GitHub"
+                        readonly
+                        rows="10"
+                        spellcheck="false"
+                        hidden
+                    ></textarea>
                 </div>
             </section>
 
