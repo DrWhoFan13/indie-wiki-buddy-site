@@ -10,13 +10,7 @@
         <link rel="icon" href="../img/favicon-64.png" sizes="64x64" />
         <link rel="icon" href="../img/favicon-128.png" sizes="128x128" />
         <link rel="stylesheet" href="../style.css" />
-        <script>
-            document.addEventListener("DOMContentLoaded", function (event) {
-                if (new URLSearchParams(window.location.search).get("updated")) {
-                    document.getElementById("updated-note").style.display = "block";
-                }
-            });
-        </script>
+        <script src="updated-note.js" defer></script>
         <meta
             name="description"
             content="The changelog for Indie Wiki Buddy, a browser extension to help you find quality, independent wikis"
@@ -39,6 +33,41 @@
                 If you run into any issues, please <a href="https://getindie.wiki/#contact">get in touch</a>. Thank you
                 for using Indie Wiki Buddy!
             </div>
+            <h2>4.0.1</h2>
+            <span>
+                <img class="browser-icon" src="../img/browser-chrome.png" alt="Chrome release date" /> TBD
+                <img class="browser-icon" src="../img/browser-firefox.png" alt="Firefox release date" /> TBD
+            </span>
+            <ul>
+                <li>
+                    Google has started using passthrough links for non-logged in users, which hides the actual
+                    destination URLs behind tokens, and breaks Indie Wiki Buddy's filtering function. This has been
+                    fixed by extracting the real URL from elsewhere in the page's data (such as the breadcrumbs).
+                </li>
+                <li>Fixed issue with Google search results that point at Google Translate being improperly decoded.</li>
+                <li>
+                    Added 7 English listings:
+                    <ul>
+                        <li>Cultic Fandom Wiki to Cultic Wiki</li>
+                        <li>DOORS Fandom Wikis to DOORS Wiki</li>
+                        <li>GoreBox Fandom Wiki to GoreBox Wiki</li>
+                        <li>In Falsus Fandom Wiki to In Falsus Wiki</li>
+                        <li>Tower Defense Simulator Fandom Wiki to Tower Defense Simulator Wiki</li>
+                        <li>Valheim Fandom Wiki to Valheim Wiki</li>
+                        <li>WARDOGS Fandom Wiki to WARDOGS Wiki</li>
+                    </ul>
+                </li>
+                <li>
+                    Added 2 Japanese listings:
+                    <ul>
+                        <li>Deltarune Fandom Wiki to Deltarune Wiki</li>
+                        <li>Undertale Fandom Wiki to Undertale Wiki</li>
+                    </ul>
+                </li>
+                <li>Added 1 French listing: Undertale Fandom Wiki to Undertale Wiki FR</li>
+                <li>Added 1 Russian listing: Undertale Fandom Wiki to Undertale Wiki</li>
+                <li>Localization updates</li>
+            </ul>
             <h2>4.0.0</h2>
             <span>
                 <img class="browser-icon" src="../img/browser-chrome.png" alt="Chrome release date" /> August 26, 2026
